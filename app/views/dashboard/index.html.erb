@@ -1,4 +1,18 @@
-<div>
-  <h1 class="font-bold text-4xl">Dashboard#index</h1>
-  <p>Find me in app/views/dashboard/index.html.erb</p>
+<div class="flex-1 bg-gray-100">
+  <h1 class="font-bold text-4xl text-yellow-500">Orangutan</h1>
+    <p>Ask an informed question</p>
+    <%= form_with url: query_path, method: :post do |form| %>
+      <%= form.label :question %>
+      <%= form.text_field :question %>
+
+      <%= form.label :source %>
+      <%= form.text_field :source %>
+
+      <%= form.submit "Ask", class: "border" %>
+    <% end %>
+</div>
+
+<div class="flex-1 bg-yellow-500">
+  <h1 class="font-bold text-4xl text-white">Orangutan</h1>
+  <p>Receive an informed answer</p>
 </div>
