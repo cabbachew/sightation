@@ -1,18 +1,18 @@
-<div class="flex-1 bg-gray-100">
-  <h1 class="font-bold text-4xl text-yellow-500">Orangutan</h1>
-    <p>Ask an informed question</p>
-    <%= form_with url: query_path, method: :post do |form| %>
-      <%= form.label :question %>
-      <%= form.text_field :question %>
+<div data-controller="query">
+  <div class="flex-1 bg-gray-100">
+    <h1 class="font-bold text-4xl text-yellow-500">Orangutan</h1>
+      <p>Ask an informed question</p>
+      <%# two text areas named question and source %>
+      <textarea name="question" id="question" data-query-target="question"></textarea>
+      <textarea name="source" id="source" data-query-target="source"></textarea>
+      <%# a button that submits the form %>
+      <button type="submit" data-action="click->query#submit">Submit</button>
+  </div>
 
-      <%= form.label :source %>
-      <%= form.text_field :source %>
-
-      <%= form.submit "Ask", class: "border" %>
-    <% end %>
-</div>
-
-<div class="flex-1 bg-yellow-500">
-  <h1 class="font-bold text-4xl text-white">Orangutan</h1>
-  <p>Receive an informed answer</p>
+  <div class="flex-1 bg-yellow-500">
+    <h1 class="font-bold text-4xl text-white">Orangutan</h1>
+    <p>Receive an informed answer</p>
+    <%# a div that will contain the answer %>
+    <div data-query-target="answer"></div>
+  </div>
 </div>
